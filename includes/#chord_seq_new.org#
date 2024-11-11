@@ -1,0 +1,1031 @@
+
+
+    * Chords with bassline
+    Very similar to the above: [[*Main score midi][Main score midi]], but this stays adds a bassline to the chord progression (the first 7 bars).
+    ﻿
+    Editing this now according to printed copy.
+    ﻿
+    Chords are in \chords_at and bass line is in \chords_bass_ab and \chords_bt and \chords_bass_bb
+    #+name: chord_with_bass
+    #+begin_src lilypond :file stuffB.png :noweb yes :tangle ~/Music/pieces/piano_solo/score/chord_sequence_a.ly
+      \version "2.24"
+      \include "ekme-heji.ily"
+      <<temp_diat_q_b>>
+        <<chords_bass_a_pb>>
+            <<chords_bass_d_pb>>
+        <<chords_bass_b_pb>>
+        <<chords_a_pt>>
+         <<chords_d_pt>>
+    ﻿
+        \score {
+          \new StaffGroup <<
+            \new PianoStaff <<
+         	\new Staff = up_eh
+         	\fixed c' {
+      	    \tempo 4 = 50
+        	    \chords_d_pt
+      	    \chords_d_pt
+      }
+         	\new Staff = down_eh
+         	\fixed c { \clef bass
+      				% \scaleu_a_b
+      		   \chords_bass_db
+      		   \chords_bass_bb
+      		    }
+            >>
+          >>
+          \layout {}
+          \midi {}
+      }
+    #+end_src
+    ﻿
+    #+RESULTS: chord_with_bass
+    [[file:stuffB.png]]
+    ﻿
+    ** Chords in A
+    #+name: chords_a_pt
+    #+begin_src lilypond
+             chords_a_pt = {
+                 \accidentalStyle "dodecaphonic"
+                 <a c e>2 % am
+                 <e g b,> |% em
+                 <f c a,> % F
+                 <fs c a,> | % D7
+                 <g bf, c> % G
+                 <g b, f> | % G7
+                 <b, e g> % C
+                 <e fs c> | % C7
+                 <f c a,> % F
+                 <g bs, f> | % gm
+                 <a c f> % F
+                 <e g b> | % em
+                 <f c' bf> % Fsus
+                 <<
+             	{ b4 a } \\
+             	{ <e f>2 }
+                 >>
+                 | % G7 }
+                 <c e g>1 % C
+             }
+    ﻿
+    #+end_src
+    ﻿
+    ** Chords in D
+    #+name: chords_d_pt
+    #+begin_src lilypond
+          chords_d_pt = {
+              \accidentalStyle "dodecaphonic"
+              <d f, a,>2 % am
+              <a, c e>
+              |% em
+              <bf, f d> % F
+              <b, f d>
+              | % D7
+              <c ef f> % G
+              <c e bf,>
+              | % G7
+              <e a, c> % C
+              <a, b f>
+              | % C7
+              <bf f d> % F
+              <c f bf>
+              | % gm
+              <d f bf> % F
+              <a c e>
+      	| % em
+              <bf, f ef> % Fsus
+              <<
+            	{ e4 d } \\
+            	{ <a, bf,>2 }
+              >>
+              | % G7 }
+              <f, a, c>1 % C
+          }
+    ﻿
+    #+end_src
+    ﻿
+    ﻿
+    ** Bass line, a
+    #+name: chords_bass_a_pb
+    #+begin_src lilypond
+      chords_bass_ab = {
+          \tuplet 3/2 {
+      	r8 as,4~
+      }
+          as,8
+          b,4.~
+          b,8. e16~
+          | %2
+          e4
+          f8. bf,16~
+          \tuplet 5/4 {
+      	bf,4 gf4 f8 
+          }
+          | %3
+          e4. bf,8~
+          bf,8 a,8
+          <a b,>4~
+          | %4
+          <a b,>8
+          <<
+      	{
+      	    b8
+      	    \tuplet 3/2
+      	    {
+      		c'8 a4~
+      	    }
+      	    a4
+      	    g4
+         } \\
+      	{
+      	    bf,4.~
+      	    bf,8 b,4.~
+      	}
+          >>
+          | %5
+          \tuplet 3/2 {
+      	b,4
+      	c
+      	a,~
+          }
+          a8 e8~
+          e16 bf8.
+          | %6
+          r8. <a, g>16~
+          \tuplet 5/4 {
+      	<a, g>8
+      	<as, a>4
+      	<b, as>4
+          }
+          <a, b>4~
+          | %7
+          \tuplet 5/4 {
+      	<a, b>4
+      	<a, b>2
+      	<a, b>4.
+      	<a, b>8~
+          }
+          | %8
+          <a, b>4.
+          <a, b>8~
+          <a, b>2
+    ﻿
+      }
+        
+    #+end_src
+    ﻿
+    ** Bass line, d
+    #+name: chords_bass_d_pb
+    #+begin_src lilypond
+      chords_bass_db = {
+          \tuplet 3/2 {
+      	r8 ds,4~
+      }
+          ds,8
+          e,4.~
+          e,8. a,16~
+          | %2
+          a,4
+          bf,8. ef,16~
+          \tuplet 5/4 {
+      	ef,4 b4, bf,8 
+          }
+          | %3
+          a,4. ef,8~
+          ef,8 d,8
+          <d e,>4~
+          | %4
+          <d e,>8
+          <<
+      	{
+      	    e8
+      	    \tuplet 3/2
+      	    {
+      		f'8 d'4~
+      	    }
+      	    d4
+      	    c4
+         } \\
+      	{
+      	    ef,4.~
+      	    ef,8 e,4.~
+      	}
+          >>
+          | %5
+          \tuplet 3/2 {
+      	e,4
+      	f
+      	d,~
+          }
+          d8 a8~
+          a16 ef8.
+          | %6
+          r8. <d, c>16~
+          \tuplet 5/4 {
+      	<d, c>8
+      	<ds, d>4
+      	<e, ds>4
+          }
+          <d, e>4~
+          | %7
+          \tuplet 5/4 {
+      	<d, e>4
+      	<d, e>2
+      	<d, e>4.
+      	<d, e>8~
+          }
+          | %8
+          <d, e>4.
+          <d, e>8~
+          <d, e>2
+    ﻿
+      }
+        
+    #+end_src
+    ﻿
+    ** Baass line, b
+    #+name: chords_bass_b_pb
+    #+begin_src lilypond
+        chords_bass_bb = {
+            r4
+            bf,4~
+            \tuplet 3/2 {
+        	bf,8 c4 a,4 r16 b,16~
+            }
+            | %2
+            b,8 c4.
+            bf4. b,8~
+            | %3
+            b,4
+            \tuplet 5/4 {
+        	<c bf>4 <c bf>16~
+            }
+            \tuplet 5/4 {
+        	<c bf>8
+        	<b, bf>4
+        	<b, a>4
+            }
+            | %4
+            <<
+        	{ b4. c'8~ c'4 a8 g16 gf } \\
+        	{ c4 b,4~ b,8 bf,4. }
+            >>
+            | %5
+            \tuplet 3/2 {
+        	f4 b,4 <f g>4
+            }
+            b,4. <c bf>8~
+            | %6
+            <c bf>2
+            r4 <c bf>4
+            | %7
+            \tuplet 3/2 {
+        	r4 g8 b,8 c4
+            }
+            bf4 <c b>4~
+            | %8
+            <c b>8 <c b>4.~
+            <c b>16 <c bf>8.~ <c bf>4
+        }
+    ﻿
+    #+end_src
+    ** Stuff Chords from tempered notes
+    *** scalet_a
+    ﻿
+    Non-traditional notation.
+    #+name: temp_diat_q_b
+    #+begin_src lilypond :file chords.png
+             \version "2.24.3"
+    ﻿
+             scaleu_a_b_t = {
+                 \accidentalStyle "dodecaphonic"
+                 \fixed c' {
+             	csoaa2^"5"
+             	fsoda^"13"
+             	gsoaa^"15"
+             	doca^"11"
+             	doba^"21"
+    ﻿
+             	csoaa4
+             	doba
+             	doca
+             	fsoda
+             	guba
+             	gsoaa
+    ﻿
+    ﻿
+                 }
+             }
+    ﻿
+             scaleu_a_b = {
+                 \tuplet 5/4 {
+             	r2  d2 ds4~
+                 }
+                 |
+                 ds4. e8~ e4 d4~
+                 |
+                 
+                 d2 \tuplet 3/2 {
+             	e2 f4
+                 }
+                 |
+                 \tuplet 7/4 {
+             	d4  f8 e4. a8~ 
+                 }
+                 a4 b4
+                 |
+                 \tuplet 5/4 {
+             	a2 as2 b4~
+                 }
+                 \tuplet 5/4 {
+             	b4 c'2 ef2
+                 }
+                 |
+                 d2 
+             }
+    ﻿
+     
+             %% Similar to chords_at but revoiced
+             chords_atB = {
+                 \accidentalStyle "dodecaphonic"
+                 <a c e>2 % am
+                 <e g b,> |% em
+                 <f c a,> % F
+             				%      <fs c a,> | % D7
+             				%      <g bf, c> % G
+                 <g b, f> | % G7
+                 <b, e g> % C
+                 <e fs c> | % C7
+                 <f c a,> % F
+                 <g bs, f> | % gm
+                 <a c f> % F
+                 <e g b> | % em
+                 <f c' bf> % Fsus
+                 <<
+             	{ b4 a } \\
+             	{ <e f>2 }
+                 >>
+                 | % G7 }
+             				%    <c e g>1 % C
+             }
+    ﻿
+             %% Similar to chords_at but again revoiced
+             chords_atB_alt_tA = {
+                 \accidentalStyle "dodecaphonic"
+                 %%%%%%%%%% 1 %%%%%%%%%%%
+                 <a c e>2\p^\markup{"soft and tentative"} \( % am
+                 <e g b,>2. \) % em
+                 \caesura
+                 |
+                 %%%%%%%%%% 2 %%%%%%%%%%%
+                 <a c e>2 \(% am
+                 <e g b,>2.\) % em
+                 |
+                 %%%%%%%%%% 2 insert %%%%%%%%%%%
+                 r4.
+                 |
+                 %%%%%%%%%% 3 %%%%%%%%%%%
+                 <a c e>2\( % am
+                 <e g b,>2.\) % em
+                 |
+        %%%%%%%%%% 4 %%%%%%%%%%%
+                 <f c a,>2\( % F
+                 <g b, f>2  % G7
+                 |
+        	 %%%%%%%%%% 5 %%%%%%%%%%%
+                 <b, e g>1 \) % C
+                 |
+      %%%%%%%%%% 6 %%%%%%%%%%%
+                 <a c e>2 \( % am
+                 <e g b,>2 % em
+                 |
+      	   %%%%%%%%%% 7 %%%%%%%%%%%
+                 <e fs c>2  % D7
+                 <f g c a,> % F
+                 |
+      	   %%%%%%%%%% 8 %%%%%%%%%%%
+                 <f c g,> \) % gm
+                 <f, gf, c g> \( % F
+                 |
+                 <g, e b>  % em
+                 <bf, f c a> % Fsus
+                 |
+                 \time 2/4
+                 <<
+             	{ b4 a } \\
+             	{ <e f,>2 \) }
+                 >>
+             }
+    ﻿
+               %% Similar to chords_at but again revoiced
+             chords_atB_alt_tB = {
+                 \accidentalStyle "dodecaphonic"
+                 <a c e>2 % am
+                 <e g b,>2. % em
+                 |
+                 <a c e>2 % am
+                 <e g b,>2. % em
+                 |
+                 %%%%%%%%%% 3 %%%%%%%%%%%
+                 <a c e>2 % am
+                 <e g b,>2. % em
+                 |
+             %%%%%%%%%%%%%%%%%%
+                 <f c a,>2 % F
+                 <g b, f>2  % G7
+                 |
+                 <b, e g>1 % C
+                 |
+             %%%%%%%%%%%%%%%%%%
+                 <a c e>2 % am
+                 <e g b,>2 % em
+                 |
+                 <e fs c>2  % D7
+                 <f c a,> % F
+                 |
+                 <f c g,>  % gm
+                 <f, c g> % F
+                 |
+                 <g, e b>  % em
+                 <bf, f c'> % Fsus
+                 |
+                 \time 2/4
+                 <<
+             	{ b4 a } \\
+             	{ <e f,>2 }
+                 >>
+             }
+    ﻿
+          %% Similar to chords_at but again revoiced
+             chords_atB_alt_b = {
+                 \accidentalStyle "dodecaphonic"
+                 %%%%%%%%%% 1 5/4 %%%%%%%%%%%
+                 r4 a,,2~\mp\<
+                 a,,8 e4.~
+                 |
+                 %%%%%%%%%% 2 %%%%%%%%%%%
+                 \tuplet 3/2 {
+             	e4 \clef treble cs'2~
+                 }
+                 cs'8 ds''8~ ds''4.. g'''16~->\ff\!
+                 |
+                 %%%%%%%%%% 3 %%%%%%%%%%%
+                 g'''2. r2
+                 |
+                 %%%%%%%%%% 4 %%%%%%%%%%%
+                 \clef bass
+                 r2
+                 \tuplet 5/4 {
+             	r8 a,,4~ a,,16 cs8.~
+                 }
+                 |
+                 %%%%%%%%%% 5 4/4 %%%%%%%%%%%
+                 \tuplet 5/4  {
+             	cs4 ds'2 \clef treble g''2~
+                 }
+                 |
+                 %%%%%%%%%% 6 4/4 %%%%%%%%%%%
+                 \ottava #1
+                 g''8 a'''4.~ a'''4 g'''~
+                 |
+                 %%%%%%%%%% 7 4/4 %%%%%%%%%%%
+                 g'''2
+                 \ottava #0
+                 r4.
+                 \clef bass
+               \ottava #-1
+                 e,,8~
+                 |
+                 %%%%%%%%%% 8 4/4 %%%%%%%%%%%
+                 e,,2
+                 \ottava #0
+                 b,2
+                 |
+                 %%%%%%%%%% 9 4/4 %%%%%%%%%%%
+                 g4. \clef treble \grace {ds'16} ds''8~
+                 ds''8
+                 \ottava #1
+                 \grace {g''16} cs''''4.
+                 |
+                 %%%%%%%%%% 10 2/4 %%%%%%%%%%%
+                 r4 \grace {ds'''16} <cs'''' e''''>4~
+            	|
+            	%%%%%%%%%% 11 4/4 %%%%%%%%%%%
+            	\time 4/4
+                <cs'''' e''''>4
+                \grace {ds'''16} <ds'''' g''''>4~
+                <ds'''' g''''>8
+                \grace {ds'''16} <cs'''' e''''>4
+            	\grace {ds'''16} <a'''' g''''>8~->
+                |
+    ﻿
+             }
+    ﻿
+            %% Similar to chords_at but again revoiced
+             chords_atB_alt_c = {
+                 \accidentalStyle "dodecaphonic"
+                 %%%%%%%%%% 1 5/4 %%%%%%%%%%%
+                  <a'''' g''''>4
+                 \grace {ds'''16} <a'''' as''''>8->\sfz
+                 r8
+                 \ottava #0
+    ﻿
+                 \clef bass
+                 a,,4~\mp\<
+                 a,,8 e4.~
+                 |
+                 %%%%%%%%%% 2 %%%%%%%%%%%
+                 \tuplet 3/2 {
+             	e4 \clef treble cs'2~
+                 }
+                 cs'8 ds''8~ ds''4.. g'''16~->\ff\!
+                 |
+                 %%%%%%%%%% 3 %%%%%%%%%%%
+                 g'''2. r2
+                 |
+                 %%%%%%%%%% 4 %%%%%%%%%%%
+                 \clef bass
+                 r2
+                 \tuplet 5/4 {
+             	r8 a,,4~ a,,16 cs8.~
+                 }
+                 |
+                 %%%%%%%%%% 5 4/4 %%%%%%%%%%%
+                 \tuplet 5/4  {
+             	cs4 ds'2 \clef treble g''2~
+                 }
+                 |
+                 %%%%%%%%%% 6 4/4 %%%%%%%%%%%
+                 \ottava #1
+                 g''8 a'''4.~ a'''4 g'''~
+                 |
+                 %%%%%%%%%% 7 4/4 %%%%%%%%%%%
+                 g'''2
+                 \ottava #0
+                 r4.
+                 \clef bass
+               \ottava #-1
+                 e,,8~
+                 |
+                 %%%%%%%%%% 8 4/4 %%%%%%%%%%%
+                 e,,2
+                 \ottava #0
+                 b,2
+                 |
+                 %%%%%%%%%% 9 4/4 %%%%%%%%%%%
+                 g4. \clef treble \grace {ds'16} ds''8~
+                 ds''8
+                 \ottava #1
+                 \grace {g''16} cs''''4.
+                 |
+                 %%%%%%%%%% 10 2/4 %%%%%%%%%%%
+                   	  r4 \grace {ds'''16} <cs'''' e''''>4~
+            	|
+            	%%%%%%%%%% 11 4/4 %%%%%%%%%%%
+            	\time 4/4
+                <cs'''' e''''>4
+                \grace {ds'''16} <ds'''' g''''>4~
+                <ds'''' g''''>8
+                \grace {ds'''16} <cs'''' e''''>4
+            	\grace {ds'''16} <a'''' g''''>8~->
+                |
+                %%%%%%%%%% 12 %%%%%%%%%%%
+            	<a'''' g''''>2. r4
+                \ottava #0
+    ﻿
+             }
+    ﻿
+             chords_atB_fin = {
+                 <a, b, e g>1
+             } 
+    ﻿
+             chords_a_ct = {
+                 \fixed c''{
+             	<guba' doca'>2
+             	<gsoaa' fsoda'>2
+             	|
+             	<guba' csoaa''>
+             	<fsoda' csoaa''>
+             	|
+             	<guba' doba''>
+             	<doba' gsoaa'>
+             	|
+             	<fsoda' doca'>
+             	<csoaa' fsoda'>
+             	|
+             	<guba doca'>
+             	<guba' doca'>
+             	|
+             	<gsoaa' fsoda'>2
+             	<csoaa' fsoda'>
+                 }
+             }
+    ﻿
+             chords_a_ct_altA = {
+                 \fixed c''{
+             	\clef treble
+             	\time 5/4
+             	<guba' doca'>2
+             	<gsoaa' fsoda'>2.
+             	|
+             	<guba' csoaa''>2
+             	<fsoda' csoaa''>2.
+             	|
+             	\time 3/8
+             	r4.
+             	|
+             	\time 5/4
+             	<guba' doba''>2
+             	<doba' gsoaa'>2.
+             	|
+             	\time 4/4
+             	<guba' csoaa''>2
+             	<fsoda' csoaa''>
+             	|
+             	<fsoda' doca'>1
+             	\bar "||"
+             	<guba' doca'>2
+             	<gsoaa' fsoda'>2
+             	|
+             	<csoaa' fsoda'>2
+             	<guba' doca'>
+             	|
+             	<guba' doca'>2
+             	<gsoaa' fsoda'>2
+             	|
+             	<csoaa' fsoda'>
+             	<gsoaa' fsoda'>
+             	|
+             	<csoaa' fsoda'>
+                 }
+             }
+    ﻿
+             chords_a_ct_fin = {
+                 \time 4/4
+                 <guba'' doca''>1	
+             }
+      
+             chords_a_cb_alt = {
+                 \clef "bass_8"
+                 \time 5/4
+             	%%%%%%%%%% 1 5/4 %%%%%%%%%%%
+             	r4
+             	fsoaa,,2~
+             	fsoaa,,4 goba,,4~ 
+             	|
+             	%%%%%%%%%% 2 %%%%%%%%%%%
+             	goba,,2
+             	goca,,2.
+             	|
+             	%%%%%%%%%% 3 %%%%%%%%%%%
+             	boda,,2. coba,2~
+             	|
+             	%%%%%%%%%% 4 4/4 %%%%%%%%%%%
+             	\time 4/4
+             	coba,4 csoaa,2.
+             	|
+             	%%%%%%%%%% 5 %%%%%%%%%%%
+             	goba,,2~
+             	goba,,8 goca,,4.~
+             	\bar "||"
+             	%%%%%%%%%% 6 %%%%%%%%%%%
+             	goca,,4 boda,,4~
+             	boda,,4 coba,4~
+             	|
+             	%%%%%%%%%% 7 %%%%%%%%%%%
+             	coba,4. csoaa,8~
+             	csoaa,4 goca,,4~
+             	|
+             	%%%%%%%%%% 8 %%%%%%%%%%%
+             	goca,,8 boda,,4.
+             	coba,4. csoaa,8~
+             	|
+             	%%%%%%%%%% 9 %%%%%%%%%%%
+             	csoaa,4 csoaa,4~
+             	csoaa,8 fsoaa,4.   	
+             	|
+             	%%%%%%%%%% 10 2/4 %%%%%%%%%%%
+             	fsoaa,,4. goba,,8~
+             	|
+             	%%%%%%%%%% 11 4/4 %%%%%%%%%%%
+             	goba,,4 goca,,4~
+             	goca,,8 coba,4.
+             	|
+                 }
+    ﻿
+                    chords_atB_alt_tC = {
+                     \accidentalStyle "dodecaphonic"
+                     %%%%%%%%%% 1 5/4 %%%%%%%%%%%
+          				% am
+                     <a, c e,>2 \(
+          				% em
+                     <e, g, b,>2.\) 
+                     |
+                     %%%%%%%%%% 2 %%%%%%%%%%%
+                     <a, c e,>2 \(% am
+                     <e, g, b,>2. \)% em
+                     |
+                     %%%%%%%%%% 3 %%%%%%%%%%%
+                     <a, c e,>2 \(% am
+                     <e, g, b,>2. \)% em
+                     |
+                     %%%%%%%%%% 4 4/4 %%%%%%%%%%%
+                     <f c g,>2 \(% F
+                     <g, b, f>2  % G7
+                     |
+                 %%%%%%%%%% 5 %%%%%%%%%%%
+                     <b, e, g,>1 \)% C
+                     |
+               %%%%%%%%%% 6 %%%%%%%%%%%
+                     <a, c e,>2 \(% am
+                     <e, g, b,>2 % em
+                     |
+                     %%%%%%%%%% 7 %%%%%%%%%%%
+                     <e, g, fs, c,>2  % D7
+                     <f, c, a,> % F
+                     |
+                     %%%%%%%%%% 8 %%%%%%%%%%%
+                     <f, c, g,,>  \) % gm
+                     <f, c g,> \( % F
+                     |
+                     %%%%%%%%%% 9 %%%%%%%%%%%
+                     <<
+               	  {
+               	      b,4 a,4
+               	      g,2
+               	  }\\
+               	  {
+               	      <g, e,>2  % em
+               	      <bf,, f, c,> \) % Fsus
+               	}
+                     >>
+                     |
+                     %%%%%%%%%% 10 2/4 %%%%%%%%%%%
+                     \time 2/4
+                    <<
+                 	{
+             	    b,4 a,
+             } \\
+                 	{
+             	    <e, f,>2
+             	}
+                     >>
+                 |
+                 %%%%%%%%%% 11 4/4 %%%%%%%%%%%
+                 <a,, b,, e, g,>1
+                 }
+    ﻿
+                     chords_atB_alt_tC = {
+                     \accidentalStyle "dodecaphonic"
+                     %%%%%%%%%% 1 5/4 %%%%%%%%%%%
+                     <a, c e,>2 % am
+                     <e, g, b,>2. % em
+                     |
+                     %%%%%%%%%% 2 %%%%%%%%%%%
+                     <a, c e,>2 % am
+                     <e, g, b,>2. % em
+                     |
+                     %%%%%%%%%% 3 %%%%%%%%%%%
+                     <a, c e,>2 % am
+                     <e, g, b,>2. % em
+                     |
+                     %%%%%%%%%% 4 4/4 %%%%%%%%%%%
+                     <f c g,>2 % F
+                     <g, b, f>2  % G7
+                     |
+                 %%%%%%%%%% 5 %%%%%%%%%%%
+                     <b, e, g,>1 % C
+                     |
+               %%%%%%%%%% 6 %%%%%%%%%%%
+                     <a, c e,>2 % am
+                     <e, g, b,>2 % em
+                     |
+                     %%%%%%%%%% 7 %%%%%%%%%%%
+                     <e, g, fs, c,>2  % D7
+                     <f, c, a,> % F
+                     |
+                     %%%%%%%%%% 8 %%%%%%%%%%%
+                     <f, c, g,,>  % gm
+                     <f, c g,> % F
+                     |
+                     %%%%%%%%%% 9 %%%%%%%%%%%
+                     <<
+               	  {
+               	      b,4 a,4
+               	      g,2
+               	  }\\
+               	  {
+               	      <g, e,>2  % em
+               	      <bf,, f, c,> % Fsus
+               	}
+                     >>
+                     |
+                     %%%%%%%%%% 10 2/4 %%%%%%%%%%%
+                     \time 2/4
+                     <<
+                 	{
+             	    b,4 a,
+             } \\
+                 	{
+             	    <e, f,>2
+             	}
+                     >>
+             	|
+             	%%%%%%%%%% 11 4/4 %%%%%%%%%%%
+             	\time 4/4
+                     <a,, b,, e, g,>1
+                 }
+             
+             chords_a_ct_pausA = {
+                 s4*5
+                 |
+                 s4*5
+                 |
+                 s4.
+                 |
+                 s4*5
+             	|
+             	s1*6
+             	|
+             	s2
+             	|
+             	s1
+             	\bar "||"
+                 }
+    ﻿
+              chords_a_ct_pausB = {
+             	s2.*3 s2*3
+             	|
+             	s1*6
+             	|
+             	s2
+             	|
+             	s1
+             	\bar "||"
+                 }
+    #+end_src
+    ﻿
+    #+call: chord_score()
+    ﻿
+    #+RESULTS:
+    [[file:pianoC.png]]
+    ﻿
+    Traditional notation
+    #+name: temp_diat_q_a 
+    #+begin_src lilypond :file chords.png 
+            
+        %% Same as scalet_a but with eh notation
+          scalet_a_eh = {
+            \accidentalStyle "dodecaphonic"
+              <a c e>2 % am
+              <e g b> |% em
+              <f c a> % F
+              <fs c a> | % D7
+              <g bf, c> % G
+              <g b, f> | % G7
+              <b e g> % C
+              <e fs c> | % C7
+              <f c a> % F
+              <g bs, f> | % gm
+              <a, c f> % F
+              <e g b,> | % em
+              <f c bf,> % Fsus
+              <e b, f> | % G7
+              <c e g>1 % C
+            }
+    ﻿
+      %% Same as scalet_a_eh but with plain notation
+            scalet_a = {
+      	\accidentalStyle "dodecaphonic"
+              <a c e>2 % am
+              <e g b> |% em
+              <f c a> % F
+              <fs c a> | % D7
+              <g bd, c> % G
+              <g b, f> | % G7
+              <b e g> % C
+              <e fs c> | % C7
+              <f c a> % F
+              <g bf, f> | % gm
+              <a, c f> % F
+              <e g b,> | % em
+              <f c bf,> % Fsus
+              <e b, f> | % G7
+              <c e g>1 % C
+            }
+    ﻿
+    ﻿
+      %%%      scalet_b = {
+      %%%    %%% 1 %%%
+      %%%        \tuplet 3/2 {
+      %%%          <a f d>2
+      %%%          <e fis bes>1~ }
+      %%%        %%% 2 %%%
+      %%%        \time 2/4
+      %%%        <e fis bes>2
+      %%%        %%% 3 %%%
+      %%%        \time 4/4
+      %%%        \tuplet 5/4 {
+      %%%          <c e a>
+      %%%          <a c f> 
+      %%%        <a c ees>4~ }
+      %%%        %%% 4 %%%
+      %%%        <a c ees>2
+      %%%        <ees f bes>
+      %%%        %%% 5 %%%
+      %%%        \time 2/4
+      %%%        <b f d>
+      %%%        %%% 6 %%%
+      %%%        \time 3/4
+      %%%        <c' f e>2.
+      %%%        <c' f e>
+      %%%        <b e dis>
+      %%%        %%% 9 %%%
+      %%%        \time 4/4
+      %%%        <bes f ees>1
+      %%%        <f ais b>2
+      %%%        <a f c> |
+      %%%        %%% 10 %%%
+      %%%        <e f a>
+      %%%        <f bes c>
+      %%%        %%% 11 %%%
+      %%%
+      %%%        <dis e b>
+      %%%        <e f c'>
+      %%%      }
+    #+end_src
+    ﻿
+    #+RESULTS: temp_diat_seq_a
+    [[file:chords.png]]
+    ﻿
+    ﻿
+    *** scaleb_a
+    #+name: temp_diat_seq_b
+    #+begin_src lilypond
+      scaleb = {
+        a2
+        e |
+        <<
+          \relative {f
+      	       fis | 
+      	       g 
+      	       e | }
+          \\
+          \relative {r8 a,4.~
+      	       a4 g4~ | 
+      	       \tuplet 5/4 {g4 e2 f2} | }
+          
+        >>
+        c2
+        bes, |
+        a,
+        g, |
+        <<
+        \relative {
+          f,
+          e |
+          f
+          g  |
+          c1 | } \\
+        \relative {
+          r8 e,4.~
+          e8 d4.~ | 
+          \tuplet 5/4 {d4 c2 fis4. des8~ } |
+          des1
+        }
+        >>
+        
+      }
+    ﻿
+      scalebb = {
+        %%% 1 %%%
+        \tuplet 3/2 {
+          a2
+          d1~ }
+        d2
+        %%% 2 %%%
+        \tuplet 5/4 {
+          c2
+          b,
+          a,4~ }
+        a,2
+        b,
+        d |
+        %%% 6 %%%
+        f2.
+        a
+        ais
+        %%% 9 %%%
+        b1 |
+        c2
+        e |
+      %%% 11 %%%
+        ees
+        d
+        c
+        %%% 12 %%%
+        b,
+      }
+    #+end_src
+    ﻿
+
