@@ -1,7 +1,7 @@
 chords_da_pt = {
     \accidentalStyle "dodecaphonic"
     \time 6/4
-    \mark \markup {\sans \fontsize #9 \raise #14 \box \bold "2" }
+    \mark \markup {\sans \fontsize #9 \raise #20 \box \bold "2" }
     <<
   	{
 	    <d f>4. <f a>4. <a, c e>2.

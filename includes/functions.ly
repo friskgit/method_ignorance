@@ -27,7 +27,7 @@ rmark =
   (rm)
   (string?)
   #{
-  \mark \markup {\sans \fontsize #1 \circle \bold #rm }
+  \mark \markup {\sans \fontsize #-2 \circle \bold #rm }
   #})
 
 caes = {

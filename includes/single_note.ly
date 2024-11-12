@@ -86,9 +86,9 @@ segmentAbcb = {
 segmentAcct = {
   s1 | %18
   s1 | %19
-  r2 r16 \mark \default csoaa8.~ \sustainOn  csoaa4~ \sustainOff   | %20
+  r2 r16 \cue "5" csoaa8.~ \sustainOn  csoaa4~ \sustainOff   | %20
   \time 5/8
-  csoaa4\laissezVibrer s4.  | %21
+  csoaa4\laissezVibrer\cue "6" s4.  | %21
   <doba guba>4\laissezVibrer  s4. | %22
   <doca gsoaa>4\laissezVibrer  s4. | %23
   <fsoda guba>4\laissezVibrer  s4.  | %24
@@ -109,13 +109,13 @@ segmentAccb = {
 }
 
 segmentAdct = {
-  <doba' guba' gsoaa'>8\f r8 r2. | %25
+  <doba' guba' gsoaa'>8\f\cue "7" r8 r2. | %25
   s1 | %26
 s1 | %27
 s1 | %28
 r2 r8
   \grace {
-      gsoaa,16
+      gsoaa,16\cue "8"
       doba
       fsoda'
       doca''
@@ -153,7 +153,7 @@ segmentAect = {
   \time 5/8
   r4 r4. | %34
   \time 4/4
-  r4 csoaa'4~ csoaa'4 r4 | %35
+  r4 csoaa'4~\cue "9" csoaa'4 r4 | %35
   \time 3/4
   cuba'2~ cuba'16 csoaa'8. | %36
   \time 4/4
@@ -188,64 +188,64 @@ segmentAecb = {
 }
 
 segmentAfct = {
-  %%%%%%%%%%%%%%%%%% 
-    \time 7/8
-    s2 s4.
-    | %40
-    \time 5/8
-    boda4.~ boda4
-    | %41
-    \time 3/4
-    \tuplet 5/3 {
-	r4
-	cuba'2
-	csoaa'2
-    }
-    | %42
-    \time 5/8
-    <guba'' doca''' gsoaa'''>16\ff-^ r8. s4.
-    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    %% csoaa4^\markup \center-column { "5" "-14" }
-    %% doba^\markup \center-column { "21" "-29" }
-    %% doca^\markup \center-column { "11" "-49" }
-    %% fsoda^\markup \center-column { "13" "+41" }
-    %% guba^\markup \center-column { "7" "-31" }
-    %% gsoaa^\markup
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    | %43
-    \time 4/4
-    doca'2 r4 doba'4~
-    | %45
-    \time 3/8
-    doba'8 <csoaa' fsoda'>4
-    | %46
-    \time 4/4
-    \tuplet 3/2 {
-    	<csoaa fsoda>2~ <csoaa fsoda>2 doca'2
-    }
-    | %47
-    \time 4/4
-    \tuplet 5/4 {
-	doba'4. <csoaa' coca''>2 <csoaa' coca''>4.
-    }
-    | %48
-    \time 4/4
-    <doca' guba'>8. <doca' guba'>16~
-    <doca' guba'>4
-    <doca guba'' fsoda''>4. guba'8~\mp
-    | %49
-    \time 3/4
-    guba'4 fsoda4 guba4
-    | %50
-    \tuplet 5/3 {
-	<csoaa'' fsoda'>4. <csoaa'' fsoda'>4. <csoaa'' fsoda'>2
-    }
-    | %51
-    r2.
-    | %52
-    r2
-    |
-}
+    %%%%%%%%%%%%%%%%%% 
+      \time 7/8
+      r2 r4.
+      | %40
+      \time 5/8
+      boda4.~\cue "10" boda4
+      | %41
+      \time 3/4
+      \tuplet 5/3 {
+  	r4
+  	cuba'2
+  	csoaa'2
+      }
+      | %42
+      \time 5/8
+      <guba'' doca''' gsoaa'''>16\ff-^\cue "11" r8. s4.
+      %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+      %% csoaa4^\markup \center-column { "5" "-14" }
+      %% doba^\markup \center-column { "21" "-29" }
+      %% doca^\markup \center-column { "11" "-49" }
+      %% fsoda^\markup \center-column { "13" "+41" }
+      %% guba^\markup \center-column { "7" "-31" }
+      %% gsoaa^\markup
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+      | %43
+      \time 4/4
+      doca'2 r4 doba'4~
+      | %45
+      \time 3/8
+      doba'8 <csoaa' fsoda'>4
+      | %46
+      \time 4/4
+      \tuplet 3/2 {
+      	<csoaa fsoda>2~\cue "12" <csoaa fsoda>2 doca'2
+      }
+      | %47
+%      \time 4/4
+      \tuplet 5/4 {
+  	doba'4. <csoaa' coca''>2 <csoaa' coca''>4.
+      }
+      | %48
+%      \time 4/4
+      <doca' guba'>8. <doca' guba'>16~
+      <doca' guba'>4
+      <doca guba'' fsoda''>4.\cue "13" guba'8~\mp
+      | %49
+      \time 3/4
+      guba'4 fsoda4 guba4
+      | %50
+      \tuplet 5/3 {
+  	<csoaa'' fsoda'>4. <csoaa'' fsoda'>4. <csoaa'' fsoda'>2
+      }
+      | %51
+      r2.
+      | %52
+      r2
+      |
+  }
 
 segmentAfcb = {
     \clef bass
@@ -590,61 +590,61 @@ segmentAepb = {
 }
 
 segmentAfpt = {
-  %%%%%%%%%%%%%%%%%%
-    
-  \time 2/8
-  \bar "||" %40
-  \time 7/8
-  r4 d4~\p d4.
-  | %41
-  \time 5/8
-  d4. <d e>4~\mp
-  | %42
-  \time 3/4
-  \tuplet 5/3 {
-	<d e>4\mf\>
-	<d e f>2
-	<d f>2\!
+    %%%%%%%%%%%%%%%%%%
+      
+    \time 2/8
+    \bar "||" %40
+    \time 7/8
+    r4 d4~\p d4.
+    | %41
+    \time 5/8
+    d4. <d e>4~\mp
+    | %42
+    \time 3/4
+    \tuplet 5/3 {
+  	<d e>4\mf\>
+  	<d e f>2
+  	<d f>2\!
+    }
+    | %43
+    \time 5/8
+    <d' d''>16-^\ff r8. r4.
+    | %44
+    \time 4/4
+    a2\mp\< r4 a4~
+    | %45
+    \time 3/8
+    a8 a4~
+    | %46
+    \time 4/4
+    \tuplet 3/2 {
+  	a2  \appoggiatura a'16 a2~\!\mf a2
+    }
+    | %47
+  %  \time 4/4
+    \tuplet 5/4 {
+        d'4.(\mp\< <d d'>2 <d' ds''>4.~
+    }
+    | %48
+  %  \time 4/4
+    <d' ds''>8.) <d' ds''>16~
+    <d' ds''>4\!\f
+    <d' e' ds''>4. a8~\mp\<
+    | %49
+    \time 3/4
+    a4. <a b>4.~
+    | %50
+ %   \time 3/4
+    \tuplet 5/3 {
+        <a b>4. <a b c'>4. <bf, a b >2
+    }
+    | %51
+%    \time 3/4
+    <d'' d'''>4.\!\mf <d'' d'''>4.
+    | %52
+    \time 2/4
+    r2
   }
-  | %43
-  \time 5/8
-  <d' d''>16-^\ff r8. r4.
-  | %44
-  \time 4/4
-  a2\mp\< r4 a4~
-  | %45
-  \time 3/8
-  a8 a4~
-  | %46
-  \time 4/4
-  \tuplet 3/2 {
-	a2  \appoggiatura a'16 a2~\!\mf a2
-  }
-  | %47
-  \time 4/4
-  \tuplet 5/4 {
-      d'4.(\mp\< <d d'>2 <d' ds''>4.~
-  }
-  | %48
-  \time 4/4
-  <d' ds''>8.) <d' ds''>16~
-  <d' ds''>4\!\f
-  <d' e' ds''>4. a8~\mp\<
-  | %49
-  \time 3/4
-  a4. <a b>4.~
-  | %50
-  \time 3/4
-  \tuplet 5/3 {
-      <a b>4. <a b c'>4. <bf, a b >2
-  }
-  | %51
-  \time 3/4
-  <d'' d'''>4.\!\mf <d'' d'''>4.
-  | %52
-  \time 2/4
-  r2
-}
 
 segmentAfpb = {
 %%%%%%%%%%%%%%%%%%
@@ -691,12 +691,12 @@ segmentAfpb = {
     | %48
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     \time 4/4
-    s1
+    r1
     | %49
     \time 3/4
-    s2.
+    r2.
     | %50
-    s2.
+    r2.
     | %51
     <d,, d,>4. <d,, d,>4.
     | %52
