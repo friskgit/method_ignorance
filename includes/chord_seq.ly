@@ -1,7 +1,7 @@
 chords_da_pt = {
     \accidentalStyle "dodecaphonic"
     \time 6/4
-    \mark \markup {\sans \fontsize #9 \raise #20 \box \bold "2" }
+    \mark \markup {\sans \fontsize #9 \raise #14 \box \bold "2" }
     <<
   	{
 	    <d f>4. <f a>4. <a, c e>2.
@@ -85,12 +85,13 @@ chords_db_pt = {
     \time 4/4
     r4 <bf d>4 <bf d c a>4 <f fs b>4~ % F
     | % D7
+    %%%%%%%%%% 5 %%%%%%%%%%%
     <f fs b>8 c4 <ef f>8~ <ef f>4 <c e bf,>4
     | % G7
 %%%%%%%%%% 6 %%%%%%%%%%%
     <e a, c>2 % C
     <<
-	{\tuplet 3/4 { b8 d' c' }}\\
+	{\tuplet 3/2 { b4 d' c' }}\\
 	{<a, f>2}
     >>
     | % C7
@@ -218,10 +219,10 @@ chords_bass_da_cb = {
 
 chords_bass_db_ct = {
 %%%%%%%%%% 1 %%%%%%%%%%%
-    s2 fsoaa2.
+    r2 fsoaa2. \sustainOn 
     |
 %%%%%%%%%% 2 %%%%%%%%%%%
-    boda,2.
+    boda,2. \sustainOff 
     fsoaa4~
     | %3
 %%%%%%%%%% 3 %%%%%%%%%%%

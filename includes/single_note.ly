@@ -1,27 +1,29 @@
 segmentAact = {
-  \tempo 4 = 50
-  \clef treble
-  \numericTimeSignature
-  \time 3/4
-  s2. |
-  \time 7/8
-  s4. s2 |
-  \time 5/8
-  s2 s8 |
-  \time 4/4
+    \tempo 4 = 50
+    \clef treble
+    \numericTimeSignature
+    \time 3/4
+    %\override Score.RehearsalMark.Y-offset = -3
+    s2.\mark \markup {\sans \fontsize #9 \box \bold "A" } |
+    \time 7/8
+    s4. s2 |
+    \time 5/8
+    s2 s8 |
+    \time 4/4
+    s1 |
+    \time 3/4
+%     \mark \markup {\sans \circle "1"}
+    \cue "1"
+    \grace {
+      csoaa16 \sustainOn 
+      guba'
+      doca''
+      fsoda'' }
+    gsoaa''2. \sustainOff |
   s1 |
-  \time 3/4
-   \mark \default
-  \grace {
-    csoaa16 \sustainOn 
-    guba'
-    doca''
-    fsoda'' }
-  gsoaa''2. \sustainOff |
-s1 |
-  s1 |
-  s1 |
-  }
+    s1 |
+    s1 |
+    }
 
 segmentAacb = {
     \clef bass
@@ -45,7 +47,7 @@ segmentAbct = {
   \time 3/16
   r8. | %9
   \time 3/4
-  \mark \default
+  \cue "2"
   \grace {
     csoaa'16 \sustainOn 
     doca''
@@ -54,12 +56,12 @@ segmentAbct = {
   }
   gsoaa''2. \sustainOff  | %10
   s2. | %11
-  \mark \default
+  \cue "3"
   r2 <doba'' doca' fsoda''>4~ \sustainOn  | %12
   <doba'' doca' fsoda''>2 \sustainOff r4 | %13
   s2. | %14
   
-  r2 \mark \default r8 \ottava #1 <csoaa'' doba'' doca'''>16-! \sustainOn r16 | %14
+  r2 \cue "4" r8 \ottava #1 <csoaa'' doba'' doca'''>16-! \sustainOn r16 | %14
   \ottava #0
   s1 \sustainOff | %15
   s1 | % 16
@@ -289,12 +291,11 @@ segmentAapt = {
     \tempo 4 = 50
     \clef treble
     \time 3/4
-        \override Score.RehearsalMark.Y-offset = -3
-    a2.\mf \rmark "1" |
+    a2.\mp  |
     \time 7/8
     r8. a16~ a4~ a4. |
     \time 5/8
-    a4.~-^ a8. r16 |
+    a4.~-! a8. r16 |
     \time 4/4
     r4 a4~ a4 r4 |
 %    \time 3/4
@@ -482,31 +483,33 @@ segmentAdpt = {
 }
 
 segmentAdpb = {
-       \ottava #-1
-     <a, b, f>16 r8. r2.
-     \time 4/4
-     \tuplet 5/4 {
-         r2 <a, bf>2 r4
-     } | %26
-%     \time 4/4
-     \tuplet 3/2 {
-         <a, bf>2 r2 <bf, b>2
-     } | %27
-     \tuplet 5/4 {
-     <b, c>4.
-     <b, c>2
-     <b, c>4.~
- } | %28
-     <b, c>4
-     <a, g>4.
-     <a, bf>4.
-     | %29
-       \time 3/16
-       <a, e bf>16-^ r8
- 	| %30
-       \ottava #0
-       %%%%%%%%%%%%%%%%%%
-  }
+  %        \ottava #-1
+%  	\clef bass
+        <a, b, f>16 r8. r2.
+        \time 4/4
+        \tuplet 5/4 {
+            r2 <a, bf>2 r4
+        } | %26
+   %     \time 4/4
+        \tuplet 3/2 {
+            <a, bf>2 r2 <bf, b>2
+        } | %27
+        \tuplet 5/4 {
+        <b, c>4.
+        <b, c>2
+        <b, c>4.~
+    } | %28
+        <b, c>4
+        <a, g>4.
+        <a, bf>4.
+        | %29
+          \time 3/16
+          <a, e bf>16-^ r8
+    	| %30
+%  	\clef bass
+  %        \ottava #0
+          %%%%%%%%%%%%%%%%%%
+     }
 
 segmentAept = {
   %%%%%%%%%%%%%%%%%%
@@ -1358,57 +1361,57 @@ segmentBcpb = {
       }
 
 section_C_ct = {
-%     \segmentAact
-      \bar "||"
-%      \segmentAbct
-      \bar "||"
-      \segmentAcct
-      \bar "||"
-%      \segmentAdct 
-      \bar "||"
-%      \segmentAect
-      \bar "||"
-%      \segmentAfct
-      \bar "||"
-%      \segmentBact
-      \bar "||"
-%      \segmentBbct
-      \bar "||"
-      \segmentBcct
-  }
+   \segmentAact
+    \bar "||"
+    \segmentAbct
+    \bar "||"
+    \segmentAcct
+    \bar "||"
+    \segmentAdct 
+    \bar "||"
+    \segmentAect
+    \bar "||"
+    \segmentAfct
+    \bar "||"
+    \segmentBact
+    \bar "||"
+    \segmentBbct
+    \bar "||"
+    \segmentBcct
+}
 
-  section_C_cb = {
- %     \segmentAacb
- %     \segmentAbcb
-      \segmentAccb
- %     \segmentAdcb
- %     \segmentAecb
-%      \segmentAfcb
- %     \segmentBacb
- %     \segmentBbcb
-      \segmentBccb
-  }
-  section_C_pt = {
-  %    \segmentAapt
-  %    \segmentAbpt
-      \segmentAcpt
-  %    \segmentAdpt
-  %    \segmentAept
-  %    \segmentAfpt
-  %%% PART 2 %%%%%%%%%%%%%%%%%%
-  %    \segmentBapt
-  %    \segmentBbpt
-     \segmentBcpt
-  }
+section_C_cb = {
+    \segmentAacb
+    \segmentAbcb
+    \segmentAccb
+    \segmentAdcb
+    \segmentAecb
+    \segmentAfcb
+    \segmentBacb
+    \segmentBbcb
+    \segmentBccb
+}
+section_C_pt = {
+    \segmentAapt
+    \segmentAbpt
+    \segmentAcpt
+    \segmentAdpt
+    \segmentAept
+    \segmentAfpt
+%%% PART 2 %%%%%%%%%%%%%%%%%%
+    \segmentBapt
+    \segmentBbpt
+   \segmentBcpt
+}
 
-  section_C_pb = {
-  %    \segmentAapb
-  %    \segmentAbpb
-      \segmentAcpb
-  %    \segmentAdpb
-  %    \segmentAepb
- %     \segmentAfpb
- %     \segmentBapb
-   %   \segmentBbpb
-      \segmentBcpb
-  }
+section_C_pb = {
+    \segmentAapb
+    \segmentAbpb
+    \segmentAcpb
+    \segmentAdpb
+    \segmentAepb
+   \segmentAfpb
+    \segmentBapb
+    \segmentBbpb
+    \segmentBcpb
+}

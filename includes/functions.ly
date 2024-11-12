@@ -19,7 +19,15 @@ rmark =
   (rm)
   (string?)
   #{
-  \mark \markup {\sans \fontsize #5 \box \bold #rm }
+  \mark \markup {\sans \fontsize #9 \box \bold #rm }
+  #})
+
+ cue =
+#(define-music-function
+  (rm)
+  (string?)
+  #{
+  \mark \markup {\sans \fontsize #1 \circle \bold #rm }
   #})
 
 caes = {

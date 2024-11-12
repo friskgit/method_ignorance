@@ -14,7 +14,7 @@
 \score {
     <<
 	\new GrandStaff \with {
-	    instrumentName = \markup \sans {"computer"}
+	    instrumentName = \markup \sans \small {"computer"}
 	    shortInstrumentName = \markup \sans {""}
 	    \override StaffGrouper.staffgroup-staff-spacing.basic-distance = #20
 	} <<
@@ -25,13 +25,13 @@
   		 (padding . 1)
   		 (stretchability . 10))
 	    }
-	    \consists "Span_arpeggio_engraver"
 		\fixed c' {
 		    \numericTimeSignature
 		    \tempo 4 = 50 \clef treble
 		    \override Staff.TimeSignature.transparent = ##t
 		    \set Staff.pedalSustainStyle = #'bracket
 		    \set Score.rehearsalMarkFormatter = #format-mark-circle-numbers
+
 %%%%%%%%%% top computer %%%%%%%%%%%
 		    \section_C_ct \bar "|." \break
 		    \section_A_ct \bar "|." \break
@@ -52,7 +52,7 @@
 		}
 	    >>
 	   \new PianoStaff \with {
-	       instrumentName = \markup \sans "piano"
+	       instrumentName = \markup \sans \small "piano"
 	       shortInstrumentName = \markup \sans ""
 	       \consists "Span_arpeggio_engraver"
 	   } <<

@@ -1,7 +1,7 @@
 chordseqBt = {
   %%%%%%%%%% 1 %%%%%%%%%%%
         \tuplet 5/2 {
-          r4.\mark \markup {\sans \fontsize #9 \box \bold "3" }
+          r4.\mark \markup {\sans \fontsize #9 \box \bold \raise #10 "3" }
           <f bf>4.~\f
           <f bf>4
           <fs b>4~
