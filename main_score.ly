@@ -1,15 +1,15 @@
-å\version "2.24"
+\version "2.24"
 \include "ekme-heji.ily"
 
 \include "includes/paper_header.ly"
 \include "includes/functions.ly"
 %%%%%%%%% Include statements for music %%%%%%%%%
 
-\include "includes/chord_seq.ly"
-\include "includes/progression.ly"
 \include "includes/single_note.ly"
-\include "includes/modal.ly"
 \include "includes/chord_seq.ly"
+% \include "includes/chord_seq.ly"
+\include "includes/modal.ly"
+\include "includes/progression.ly"
 
 \score {
     <<
@@ -33,10 +33,10 @@
 		    \set Score.rehearsalMarkFormatter = #format-mark-circle-numbers
 
 %%%%%%%%%% top computer %%%%%%%%%%%
-		    \section_C_ct \bar "|." \break
-		    \section_A_ct \bar "|." \break
-		    \section_E_ct \bar "|." \break
-		    \section_B_ct \bar "|."
+		    \section_C_ct \bar "|." \break \pageBreak 
+		    \section_A_ct \bar "|." \break \pageBreak
+		    \section_E_ct \bar "|." \break \pageBreak
+		    \section_B_ct \bar "|." 
 		}
 		
 		\new Staff = "c_down"
@@ -60,6 +60,7 @@
 	       \fixed c' {
 		   \override TextSpanner.dash-fraction = #0.6
 		   \override TextSpanner.dash-period = #1.5
+		   \set Staff.pedalSustainStyle = #'bracket
 		   \numericTimeSignature
 		   \clef treble
 %%%%%%%%%% piano staff treble %%%%%%%%%%%
@@ -87,7 +88,8 @@
 	       
 	   >>
      >>
-     \layout {
+    \layout {
+	indent = 2\cm
 	 \context {
 	     \Staff
 	     \RemoveEmptyStaves

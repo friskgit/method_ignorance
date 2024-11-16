@@ -1,7 +1,7 @@
 chordseqBt = {
   %%%%%%%%%% 1 %%%%%%%%%%%
         \tuplet 5/2 {
-          r4.\mark \markup {\sans \fontsize #9 \box \bold \raise #10 "3" }
+          r4.\mark \markup {\sans \fontsize #9 \box \bold \raise #10 "C" }
           <f bf>4.~\f
           <f bf>4
           <fs b>4~
@@ -195,7 +195,7 @@ chordCresct = {
      %%%%%%%%%% 27 %%%%%%%%%%%
          \time 4/4
          r4
-         <f as e'>4.\mf %1
+         <f as e'>4.\mf\< %1
          <f as e'>4. %1
      %%%%%%%%%% 28 %%%%%%%%%%%
          |
@@ -212,7 +212,7 @@ chordCresct = {
          |
          \tuplet 3/2 {
      	<a c' fs'>2
-     	<a c' fs'>1
+     	<a c' fs'>1\!\f
          }
      %   <f as e'>4
      %   <fs b e'>4
@@ -221,7 +221,7 @@ chordCresct = {
      %%%%%%%%%% 31 %%%%%%%%%%%
          |
    %      \time 5/4
-        <as e' a'>2.\<
+        <as e' a'>2.\mp\<
         <b f' as'>2
    %%%%%%%%%% 32 %%%%%%%%%%%
          |
@@ -437,8 +437,9 @@ chordseqCb = {
                | %10
 %               \time 7/8
                a,4\sustainOff r4 r4.
+	       \clef treble
   %%%%%%%%%% 26 %%%%%%%%%%%
-               | 
+               |
                r8.
              }
            >> \oneVoice
@@ -531,7 +532,7 @@ chordseqAb = {
           f2
 %%%%%%%%%% 11 %%%%%%%%%%%
           |
-          a,1\sostenutoOn
+          \acciaccatura a,16 a,1\sostenutoOn
 %%%%%%%%%% 12 %%%%%%%%%%%
           |
           \acciaccatura c,16\sostenutoOff\sostenutoOn c,1
@@ -693,11 +694,11 @@ chordCrescb = {
         chordseqCput = {
   %%%%%%%%%% 1 %%%%%%%%%%%
   	  % 4/4
-  <csoaa'' fsoda'' gsoaa'>1\arpeggio
+  <csoaa'' fsoda'' gsoaa'>1\arpeggio\sustainOn \cue "24"
   %%%%%%%%%% 2 %%%%%%%%%%%
   	  | %2
   r2
-  <doba' guba' csoaa''>2\arpeggio
+  <doba' guba' csoaa''>2\arpeggio\sustainOff 
   %%%%%%%%%% 3 %%%%%%%%%%%
   	  | %3
   	 r2
@@ -708,12 +709,12 @@ chordCrescb = {
   r2
   %%%%%%%%%% 5 %%%%%%%%%%%
   |
-  <fsoda' gsoaa' doba''>2.\arpeggio
+  <fsoda' gsoaa' doba''>2.\arpeggio\sustainOn \cue "25"
   r4
   %%%%%%%%%% 6 %%%%%%%%%%%
   |
   r4
-  <guba' csoaa' doca''>2\arpeggio
+  <guba' csoaa' doca''>2\arpeggio\sustainOff 
   %%%%%%%%%% 7 %%%%%%%%%%%
   |
   r2.
@@ -738,11 +739,11 @@ chordseqCbput = {
     \ottava #0
 				% 4/4
     r4
-    guba'4.
+    guba'4. \sustainOn \cue "26"
     gsoaa'4.
     |
 				% 4/4
-    doba'4
+    doba'4 \sustainOff 
     doca'4
     <fsoda' csoaa''>2
     |
@@ -759,28 +760,31 @@ chordseqCbput = {
     }
     |
 				% 5/4
-    <csoaa'' doba'' guba''>2.
+    <csoaa'' doba'' guba''>2. \sustainOn \cue "27"
     <doba'' doca'' gsoaa''>2
     |
 				% 6/8
-    <doca'' fsoda'' csoaa''>4.
+    <doca'' fsoda'' csoaa''>4. \sustainOff 
     <doca'' guba'' doba''>4.
     |
 				% 3/8
     r4.
     |
 				% 5/8
-    <fsoda'' gsoaa'' doca'''>4.-^
-    <fsoda'' gsoaa'' doca'''>4-^
+    <fsoda'' gsoaa'' doca'''>4.-^ \sustainOn \cue "28"
+    <fsoda'' gsoaa'' doca'''>4-^ \sustainOff 
     |
 				%9/8
-    <fsoda'' gsoaa'' doca'''>4.-^
-    <fsoda'' gsoaa'' doca'''>4-^
+    <fsoda'' gsoaa'' doca'''>4.-^ \sustainOn \cue "29"
+    <fsoda'' gsoaa'' doca'''>4-^ \sustainOff 
     <fsoda'' gsoaa'' doca'''>4-^
     r4
     |
 				% 4/4
-    <fsoda'' gsoaa'' doca'''>1->
+    <<
+	  {  <fsoda'' gsoaa'' doca'''>1-> }\\
+	  {s2.\sustainOn \cue "30" s4 \sustainOff}
+    >>
     \caesura
     \ottava #0
 }

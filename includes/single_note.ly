@@ -15,11 +15,11 @@ segmentAact = {
 %     \mark \markup {\sans \circle "1"}
     \cue "1"
     \grace {
-      csoaa16 \sustainOn 
+      csoaa16\mf\< \sustainOn 
       guba'
       doca''
       fsoda'' }
-    gsoaa''2. \sustainOff |
+    gsoaa''2.\!\f \sustainOff |
   s1 |
     s1 |
     s1 |
@@ -28,19 +28,19 @@ segmentAact = {
 segmentAacb = {
     \clef bass
     %% \time 3/4
-    s2. |
+    r2. |
     %% \time 7/8
-    s4. s2 |
+    r4. r2 |
     %% \time 5/8
-    s2 s8 |
+    r4. r4 |
     %% \time 4/4
-    s1 |
+    r1 |
     %% \time 3/4
-    s2.
+    r2.
     |
-    s1 |
-    s1 |
-    s1 |
+    r1 |
+    r1 |
+    r1 |
 }
 
 segmentAbct = {
@@ -49,19 +49,19 @@ segmentAbct = {
   \time 3/4
   \cue "2"
   \grace {
-    csoaa'16 \sustainOn 
+    csoaa'16\mf\< \sustainOn 
     doca''
     fsoda''
     guba'' 
   }
-  gsoaa''2. \sustainOff  | %10
+  gsoaa''2.\!\f \sustainOff  | %10
   s2. | %11
   \cue "3"
-  r2 <doba'' doca' fsoda''>4~ \sustainOn  | %12
+  r2 <doba'' doca' fsoda''>4~\f \sustainOn  | %12
   <doba'' doca' fsoda''>2 \sustainOff r4 | %13
   s2. | %14
   
-  r2 \cue "4" r8 \ottava #1 <csoaa'' doba'' doca'''>16-! \sustainOn r16 | %14
+  r2 \cue "4" r8 \ottava #1 <csoaa'' doba'' doca'''>16-!\f \sustainOn r16 | %14
   \ottava #0
   s1 \sustainOff | %15
   s1 | % 16
@@ -86,13 +86,13 @@ segmentAbcb = {
 segmentAcct = {
   s1 | %18
   s1 | %19
-  r2 r16 \cue "5" csoaa8.~ \sustainOn  csoaa4~ \sustainOff   | %20
+  r2 r16 \cue "5" csoaa8.~\p \sustainOn  csoaa4~ \sustainOff   | %20
   \time 5/8
-  csoaa4\laissezVibrer\cue "6" s4.  | %21
-  <doba guba>4\laissezVibrer  s4. | %22
+  csoaa4\laissezVibrer s4.  | %21
+  <doba guba>4\laissezVibrer \sustainOn  \cue "6"  s4. \sustainOff | %22
   <doca gsoaa>4\laissezVibrer  s4. | %23
   <fsoda guba>4\laissezVibrer  s4.  | %24
-  s1 | %25
+  r1 | %25
 }
 
 segmentAccb = {
@@ -109,18 +109,18 @@ segmentAccb = {
 }
 
 segmentAdct = {
-  <doba' guba' gsoaa'>8\f\cue "7" r8 r2. | %25
-  s1 | %26
+  <doba' guba' gsoaa'>8\sustainOn \f\cue "7" r8 r2. | %25
+  r1\sustainOff  | %26
 s1 | %27
 s1 | %28
 r2 r8
   \grace {
-      gsoaa,16\cue "8"
+      gsoaa,16\sustainOn \cue "8" 
       doba
       fsoda'
       doca''
        }
-  fsoda''4.\f
+  fsoda''4.\f \sustainOff 
   % \grace {
   %     fsoda'16
   %     guba'' }
@@ -147,15 +147,15 @@ segmentAdcb = {
 segmentAect = {
   %%%%%%%%%%%%%%%%%% 
   \time 4/4
-  boda2. r8 cuba'8~ | %32
+  boda2.\sustainOn \cue "9" r8 cuba'8~ \sustainOff  | %32
   \time 7/8
   cuba'8. boda16~ boda4~ boda4. | %33
   \time 5/8
   r4 r4. | %34
   \time 4/4
-  r4 csoaa'4~\cue "9" csoaa'4 r4 | %35
+  r4 csoaa'4~\sustainOn \cue "9"  csoaa'4 r4 | %35
   \time 3/4
-  cuba'2~ cuba'16 csoaa'8. | %36
+  cuba'2~ \sustainOff  cuba'16 csoaa'8. | %36
   \time 4/4
   r4 (cuba'2~ cuba'8. fsoaa16~
   | %37
@@ -193,8 +193,8 @@ segmentAfct = {
       r2 r4.
       | %40
       \time 5/8
-      boda4.~\cue "10" boda4
-      | %41
+      boda4.~\sustainOn \cue "10"  boda4 \sustainOff 
+      | %41 
       \time 3/4
       \tuplet 5/3 {
   	r4
@@ -203,7 +203,7 @@ segmentAfct = {
       }
       | %42
       \time 5/8
-      <guba'' doca''' gsoaa'''>16\ff-^\cue "11" r8. s4.
+      <guba'' doca''' gsoaa'''>16\sustainOn \ff-^   \cue "11" r8. s4. \sustainOff 
       %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
       %% csoaa4^\markup \center-column { "5" "-14" }
       %% doba^\markup \center-column { "21" "-29" }
@@ -221,7 +221,7 @@ segmentAfct = {
       | %46
       \time 4/4
       \tuplet 3/2 {
-      	<csoaa fsoda>2~\cue "12" <csoaa fsoda>2 doca'2
+      	<csoaa fsoda>2~\sustainOn  \cue "12" <csoaa fsoda>2 doca'2 \sustainOff 
       }
       | %47
 %      \time 4/4
@@ -232,7 +232,7 @@ segmentAfct = {
 %      \time 4/4
       <doca' guba'>8. <doca' guba'>16~
       <doca' guba'>4
-      <doca guba'' fsoda''>4.\cue "13" guba'8~\mp
+      <doca guba'' fsoda''>4. \sustainOn  \cue "13" guba'8~\mp \sustainOff 
       | %49
       \time 3/4
       guba'4 fsoda4 guba4
@@ -291,13 +291,13 @@ segmentAapt = {
     \tempo 4 = 50
     \clef treble
     \time 3/4
-    a2.\mp  |
+    a2.\p  |
     \time 7/8
-    r8. a16~ a4~ a4. |
+    r8. a16~\mp a4~ a4. |
     \time 5/8
-    a4.~-! a8. r16 |
+    a16-!\mf r8. r8 a4 |
     \time 4/4
-    r4 a4~ a4 r4 |
+    r4 a4~\p a4 r4 |
 %    \time 3/4
     a2~->\f a16 a8.~\mp |
     \time 4/4
@@ -370,15 +370,15 @@ segmentAbpb = {
     \time 3/16
     r8. | %9
 %    \time 3/4
-    a,2. | %10 
+    a,2.\mp | %10 
     r2
     \tuplet 3/2 {
-      g,8 fs4~
+      g,8\mp\< fs4~
   } | %11
-    fs8 as4. b4~ | %12
+    fs8 as4. b4~\!\mf | %12
     b2 r4 |
     \tuplet 7/6 {
-      r8 r4 r4 <a, e, f>8-! r8 | %14
+      r8 r4 r4 <a, e, f>8-!\mp r8 | %14
     }
     r2 r8 a8~ |
     a2.. r8 | %16
@@ -424,6 +424,7 @@ segmentAcpt = {
   a4. r4 | %23
   a4.\!\mf r4 | %24
   \time 4/4
+  \once \override Hairpin.minimum-length = 16
   \repeat tremolo 16 a16\ppp\< | %25
   
 }
@@ -441,15 +442,15 @@ segmentAcpb = {
   s2. s4
   \sostenutoOff | %20
   \time 5/8
-  r4 r4 b,8~ | %21
+  r4 r4 b,8~\p\< | %21
   \tuplet 4/5 {
       b,4 fs4 
   } | %22
-  as4. e'16~ e'8.~ | %23
+  as4. e'4~\!\mf\> | %23
   \tuplet 3/2 {
       e'4 as4 fs4~
   }
-  fs8 | %24
+  fs8\!\mp
   \time 4/4
   s1 | %25
 
@@ -545,48 +546,58 @@ segmentAept = {
 }
 
 segmentAepb = {
-      %%%%%%%%%%%%%%%%%%
-      \time 4/4
-      \clef bass
-      s1
-      | %31
-      \time 7/8
-      <<
-	  { \voiceOne
+%%%%%%%%%%%%%%%%%%
+    \time 4/4
+    \clef bass
+    s1
+    | %31
+    \time 7/8
+    <<
+	{
+	    \voiceTwo
+	    r8. <e, f,>16-! r4 r4.
+	    | %32
+	    \time 5/8
+	    d,16-! r8. r8 r4
+	    | %33
+	    \time 4/4
+	    \once \override TupletBracket.direction = #1
+	    \once \override TupletBracket.padding = #2
+	    \tuplet 3/2 {
+		r2 <as c>2 <as c>2
+	    }
+	    \time 3/4
+	    r4. (d4.\pp
+	    | %34
+	}
+	\new Voice
+	
+	{
+	    \voiceOne
 	    s2 (d4 <b, as,>8~
 	    | %32
 	    <b, as,>4 e,4.
 	    | %33
 	    \time 4/4
-	    b,,1)
-	} \new Voice
-	  { \voiceTwo
-     r8. <e, f,>16-! r4 r4.
-      | %32
-      \time 5/8
-      d,16-! r8. r8 r4
-	    | %33
-	    \time 4/4
-	    \tuplet 3/2 {
-		r2 <as c>2 <as c>2
-	    }
+	    b,,1)\sostenutoOn
+	    |
+	    s4\sostenutoOff s2
+	    |
+
 	}
-      >> \oneVoice
-      \time 3/4
-      r4. (d4.\pp
-      | %34
-      \time 4/4
-      \tuplet 5/4 {
+    >> \oneVoice
+    \time 4/4
+    \tuplet 5/4 {
         <b, as,>2 e,2 b,,4~
-	}
-      | %35
-      b,,1)
-      \tuplet 5/4 {
-	  \ottava #-1
+    }
+    | %35
+    b,,1)
+    \tuplet 5/4 {
+	\ottava #-1
         r2 r2 d,,16 r8.
-	  \ottava #0
-      }
-      
+	\ottava #0
+    }
+    
 }
 
 segmentAfpt = {
@@ -709,15 +720,15 @@ segmentBact = {
         r2.
         | %1
         \time 7/4
-       <guba' doca'>2.\pp \sustainOn 
-        <guba' doca'>2 \sustainOff 
+       <guba' doca'>2.\pp \sustainOn \cue "l4"
+        <guba' doca'>2 
         <guba' doba'>2
     %%%%%%%%%%%%%%%%%% 3
         | %2
 %        \time 4/4
         \tuplet 3/2 {
         	r4
-        	<gsoaa' fsoda'>2.\p
+        	<gsoaa' fsoda'>2.\p\sustainOff 
         	<guba' doca'>2
         }
     %%%%%%%%%%%%%%%%%% 4
@@ -731,16 +742,17 @@ segmentBact = {
     <gsoaa' fsoda'>4. <guba' csoaa''>8~\!\f
     <guba' csoaa''>2~
         <guba' csoaa''>4
-  	r8. <csoaa'' gsoaa''>16->\sfz
+  	r8. <csoaa'' gsoaa''>16->\sfz\sustainOn \cue "15"
 	|
 %%%%%%%%%% 5b %%%%%%%%%%%
 	\time 3/16
 	 r8.
+       \bar "||"
 	|
     %%%%%%%%%%%%%%%%%% 6
         \time 4/4
 	\clef treble
-    <gsoaa' fsoda'>2\mf
+    <gsoaa' fsoda'>2\mf\sustainOff 
     r8 <gsoaa' fsoda'>4.
     |
     %%%%%%%%%%%%%%%%%% 7
@@ -804,18 +816,18 @@ segmentBbct = {
 %%%%%%%%%%%%%%%%%% 10
     \time 9/8
     \grace {
-      	doca16 [
+      	doca16 [\sustainOn 
       	    guba16
       	    csoaa'16
       	    guba'16 ] }
 
-    <fsoda'' guba'' gsoaa'''>8\sfz-> r4
+    <fsoda'' guba'' gsoaa'''>8\sfz-> \cue "17" r4
     r2.
     |
 %%%%%%%%%% 11 %%%%%%%%%%%
 				%        \time 4/4
     r4
-    <gsoaa' fsoda'>4.
+    <gsoaa' fsoda'>4.\sustainOff 
     <guba' csoaa''>4.
     |
 %%%%%%%%%% 12 %%%%%%%%%%%
@@ -825,12 +837,12 @@ segmentBbct = {
     |
 %%%%%%%%%% 13 %%%%%%%%%%%
     \grace {
-      	csoaa'16 [
+      	csoaa'16 [\sustainOn \cue "18"
       	    fsoda'16
       	    doca''16
       	    guba''16 ]
     }
-    csoaa'''1
+    csoaa'''1 \sustainOff 
 %%%%%%%%%% 14 %%%%%%%%%%%
 
     \grace {
@@ -847,14 +859,15 @@ segmentBbct = {
 %%%%%%%%%% insert 14 %%%%%%%%%%%
 				% \time 3/8
     <doca'' coba'' goca'>4.
+    |
 			% 3/4
-<doca' coba' goca'>2.\!\mp\breathe
+    <doca' coba' goca'>2.\!\mp\breathe
 %%%%%%%%%% 15 %%%%%%%%%%%
     % \time 5/8
-    <fsoaa boda>4.~ <fsoaa boda>4\p\>
+    <fsoaa boda>4.~\sustainOn  <fsoaa boda>4\p\> \cue "19"
     |
 %%%%%%%%%% 16 3/4 %%%%%%%%%%%
-    goba4 goca4 r4
+    goba4 goca4 \sustainOff  r4
     %%%%%%%%%% 17 5/8 %%%%%%%%%%%
     goba4.\!\pp fsoaa4
     %%%%%%%%%% 18 3/8 %%%%%%%%%%%
@@ -899,24 +912,24 @@ segmentBbcb = {
 
 segmentBcct = {
    %   \time 3/4
-      goba2.\mp \sustainOn  |
+      goba2.\p \sustainOn \cue "20" |
   %    \time 7/8
-      r8. \sustainOff goca16~ \sustainOn  goca4~ \sustainOff  goca4. |
+      r8. \sustainOff goca16~\mp  goca4~   goca4. |
  %     \time 5/8
-      fsoaa4.~ \sustainOn fsoaa4 \sustainOff  |
+      fsoaa4.~\p  fsoaa4   |
 %      \time 4/4
-      r4 boda4~ \sustainOn boda4 \sustainOff  r4 |
+      r4 boda4~\pp  boda4   r4 |
   %    \time 3/4
-     coba2~\sustainOn coba16 \sustainOff r8. |
+     coba'2~\mp coba'16  r8. |
      \time 3/4
       <<
 	  {
 	      \grace {
-		  csoaa16 \sustainOn 
+		  csoaa16 \sustainOn \cue "21" 
 		  guba'
 		  doca''
 		  fsoda'' }
-	      gsoaa''2.~->\f \sustainOff  |
+	      gsoaa''2.~->\f \sustainOff |
 	      gsoaa''4. r4.
 	     }\\
 	  { r4. <goba boda>4.~\mf
@@ -1306,19 +1319,19 @@ segmentBbpb = {
 segmentBcpt = {
 %          \tempo 4 = 50
           \time 3/4
-          a2.\mp 
+          a2.\p 
           |
           \time 7/8
-          r8. a16~ a4~ a4.
+          r8. a16~\mp a4~ a4.
   	|
           \time 5/8
-          a4.~ a8. r16
+          a4.~-^\p a8. r16
 	  |
           \time 4/4
-          r4 a4~ a4 r4
+          r4 a4~\pp\< a4 r4
 	    |
           \time 3/4
-          a2~\< a16 a8.~
+          a2~ a16 a8.~
 	      |
      %     \time 3/4
             a4. a4.~\!\mf
@@ -1348,7 +1361,7 @@ segmentBcpb = {
 %        \time 7/8
         s4. s2
  %       \time 5/8
-        a,,16-! r8. r8 r4
+        a,,16-!\mf r8. r8 r4
   %      \time 4/4
         s1
     %    \time 3/4

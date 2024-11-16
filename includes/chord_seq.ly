@@ -1,10 +1,12 @@
 chords_da_pt = {
     \accidentalStyle "dodecaphonic"
     \time 6/4
-    \mark \markup {\sans \fontsize #9 \raise #14 \box \bold "2" }
+    
     <<
   	{
-	    <d f>4. <f a>4. <a, c e>2.
+%	    \override RehearsalMark.Y-offset = #-10
+	    <d f>4.
+	    <f a>4. <a, c e>2.
 	} \\
   	{
 	    r4 <c e>2~ <c e>4. g4.-> 
@@ -219,7 +221,7 @@ chords_bass_da_cb = {
 
 chords_bass_db_ct = {
 %%%%%%%%%% 1 %%%%%%%%%%%
-    r2 fsoaa2. \sustainOn 
+    r2  \cue "22" fsoaa2.\sustainOn
     |
 %%%%%%%%%% 2 %%%%%%%%%%%
     boda,2. \sustainOff 
@@ -241,10 +243,10 @@ chords_bass_db_ct = {
     goca1
     | %8
 %%%%%%%%%% 8 %%%%%%%%%%%
-    fsoaa2. boda2
+    fsoaa2. \sustainOn \cue "23"  boda2
     |
 %%%%%%%%%% 9 %%%%%%%%%%%
-    goca2. cuba2
+    goca2. cuba2 \sustainOff 
     |
 %%%%%%%%%% 10 %%%%%%%%%%%
     boda,1
@@ -295,7 +297,7 @@ chords_bass_da_pb =
 {
     \clef bass
     \tuplet 3/2 {
-	r4 ds,2~
+	r4 { \mark \markup \sans \fontsize #9 \box \bold \raise #6 "B" } ds,2~
     }
     ds,4.
     e,4.~
@@ -314,13 +316,13 @@ chords_bass_da_pb =
     <d e,>8
     <<
 	{
-	    e8
+	    e8 \(
 	    \tuplet 3/2
 	    {
 		f'8 d'4~
 	    }
 	    d'4
-	    c4
+	    c4 \)
 	} \\
 	{
 	    ef,4.~
