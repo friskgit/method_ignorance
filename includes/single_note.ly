@@ -1,10 +1,17 @@
 segmentAact = {
+    \override Score.MetronomeMark.padding = #4
     \tempo 4 = 50
     \clef treble
     \numericTimeSignature
     \time 3/4
-    %\override Score.RehearsalMark.Y-offset = -3
-    s2.\mark \markup {\sans \fontsize #9 \box \bold "A" } |
+				%\override Score.RehearsalMark.Y-offset = -3
+    s2.\mark \markup {
+	\column {
+	    \line {\raise #4 \sans \fontsize #9 \box \bold "A" }
+	    \line {" "}
+	}
+    }
+    |
     \time 7/8
     s4. s2 |
     \time 5/8
@@ -12,18 +19,18 @@ segmentAact = {
     \time 4/4
     s1 |
     \time 3/4
-%     \mark \markup {\sans \circle "1"}
+				%     \mark \markup {\sans \circle "1"}
     \cue "1"
     \grace {
-      csoaa16\mf\< \sustainOn 
-      guba'
-      doca''
-      fsoda'' }
+	csoaa16\mf\< \sustainOn 
+	guba'
+	doca''
+	fsoda'' }
     gsoaa''2.\!\f \sustainOff |
-  s1 |
     s1 |
     s1 |
-    }
+    s1 |
+}
 
 segmentAacb = {
     \clef bass
@@ -153,7 +160,7 @@ segmentAect = {
   \time 5/8
   r4 r4. | %34
   \time 4/4
-  r4 csoaa'4~\sustainOn \cue "9"  csoaa'4 r4 | %35
+  r4 csoaa'4~\sustainOn \cue "9b"  csoaa'4 r4 | %35
   \time 3/4
   cuba'2~ \sustainOff  cuba'16 csoaa'8. | %36
   \time 4/4
@@ -821,7 +828,7 @@ segmentBbct = {
       	    csoaa'16
       	    guba'16 ] }
 
-    <fsoda'' guba'' gsoaa'''>8\sfz-> \cue "17" r4
+    <fsoda'' guba'' gsoaa'''>8\sfz-> \cue "16" r4
     r2.
     |
 %%%%%%%%%% 11 %%%%%%%%%%%
@@ -837,7 +844,7 @@ segmentBbct = {
     |
 %%%%%%%%%% 13 %%%%%%%%%%%
     \grace {
-      	csoaa'16 [\sustainOn \cue "18"
+      	csoaa'16 [\sustainOn \cue "17"
       	    fsoda'16
       	    doca''16
       	    guba''16 ]
@@ -864,7 +871,7 @@ segmentBbct = {
     <doca' coba' goca'>2.\!\mp\breathe
 %%%%%%%%%% 15 %%%%%%%%%%%
     % \time 5/8
-    <fsoaa boda>4.~\sustainOn  <fsoaa boda>4\p\> \cue "19"
+    <fsoaa boda>4.~\sustainOn  <fsoaa boda>4\p\> \cue "18"
     |
 %%%%%%%%%% 16 3/4 %%%%%%%%%%%
     goba4 goca4 \sustainOff  r4
@@ -912,7 +919,7 @@ segmentBbcb = {
 
 segmentBcct = {
    %   \time 3/4
-      goba2.\p \sustainOn \cue "20" |
+      goba2.\p \sustainOn \cue "19" |
   %    \time 7/8
       r8. \sustainOff goca16~\mp  goca4~   goca4. |
  %     \time 5/8
@@ -925,7 +932,7 @@ segmentBcct = {
       <<
 	  {
 	      \grace {
-		  csoaa16 \sustainOn \cue "21" 
+		  csoaa16 \sustainOn \cue "20" 
 		  guba'
 		  doca''
 		  fsoda'' }

@@ -221,7 +221,7 @@ chords_bass_da_cb = {
 
 chords_bass_db_ct = {
 %%%%%%%%%% 1 %%%%%%%%%%%
-    r2  \cue "22" fsoaa2.\sustainOn
+    r2  \cue "21" fsoaa2.\sustainOn
     |
 %%%%%%%%%% 2 %%%%%%%%%%%
     boda,2. \sustainOff 
@@ -243,7 +243,7 @@ chords_bass_db_ct = {
     goca1
     | %8
 %%%%%%%%%% 8 %%%%%%%%%%%
-    fsoaa2. \sustainOn \cue "23"  boda2
+    fsoaa2. \sustainOn \cue "22"  boda2
     |
 %%%%%%%%%% 9 %%%%%%%%%%%
     goca2. cuba2 \sustainOff 

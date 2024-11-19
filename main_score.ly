@@ -11,6 +11,63 @@
 \include "includes/modal.ly"
 \include "includes/progression.ly"
 
+\bookpart {
+    \header { tagline = ""
+	      title = ""
+	      composer = "" 
+	      dedication = ""
+	  }
+  \markuplist {
+    \justified-lines {
+      \override #'(baseline-skip . 4)
+      \fill-line {
+        \column {" "}
+        \center-column {
+          \override #'(font-size . 12)
+          \override #'(font-family . sans)
+                                %        \override #'(baseline-skip . 10)
+          \line { \lower #58 { "Method and Ignorance" } } 
+          \line { " " }
+          \line {
+            \override #'(font-size . 4) 
+            \override #'(font-shape . italic) "for Chryssie Nanou" }
+          \line { " " }
+          \lower #55
+          \line { 
+            \override #'(font-size . 3)
+            \override #'(font-family . sans)
+            "© Henrik Frisk (2024)"
+          }
+      }
+	\line { \override #'(font-size . 2) 
+		\override #'(font-shape . italic) {"Durata: ~14'00''"}
+}
+                
+%%%        \column { \override #'(font-size . 2) 
+%%%                  \override #'(font-shape . italic) {"Dedicated to democracy"}
+%%%                  \lower #140 \line { \override #'(font-size . 2)
+%%%                                      \override #'(font-family . sans) 
+%%%                                      "Durata: ~14'00''"
+%%%                                    }
+%%%                }
+      }
+    }
+  }
+     \pageBreak 
+    }
+%%%\bookpart {
+%%%      \header {
+%%%    title = \markup { \override #'(font-name . "DejaVuSans" ) \override #'(font-size . 10) "Method and Ignorance" }
+%%%    subtitle = \markup { \override #'(font-name . "DejaVuSans" ) \override #'(font-shape . italic) "for Chryssie Nanou" }
+%%%    composer = \markup { \override #'(font-name . "DejaVuSans" ) \fontsize #-2 "Henrik Frisk" }
+%%%    copyright = \markup { \override #'(font-name . "DejaVuSans" ) \fontsize #-2 "© 2009, dinergy music / Svensk Musik" }
+%%%    breakbefore = ##t
+%%%    tagline = \markup { "" }
+%%%  }
+  
+%%% }
+
+\bookpart {
 \score {
     <<
 	\new GrandStaff \with {
@@ -106,4 +163,5 @@
 	 }
      }
      \midi {}
+}
 }
